@@ -1,0 +1,63 @@
+{
+  "name": "zama-whisper",
+  "version": "1.0.1",
+  "description": "TypeScript SDK for Zama Whisper DApp",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "src/vite-plugin.js",
+    "src/vite-plugin.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "debug": "npm run build && npx vite --open test-debug.html",
+    "debug:lan": "npm run build && npx vite --host 0.0.0.0 --open test-debug.html",
+    "test-server": "npx vite",
+    "server:lan": "npx vite --host 0.0.0.0"
+  },
+  "keywords": [
+    "zama",
+    "fhe",
+    "privacy",
+    "ethereum",
+    "web3",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thursdaycapital/zama-whisper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thursdaycapital/zama-whisper/issues"
+  },
+  "homepage": "https://github.com/thursdaycapital/zama-whisper",
+  "dependencies": {
+    "@zama-fhe/relayer-sdk": ">=0.2.0",
+    "crypto-js": "^4.2.0",
+    "ethers": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.0.0",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
